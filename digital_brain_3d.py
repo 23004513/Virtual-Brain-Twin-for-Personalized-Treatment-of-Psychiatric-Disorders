@@ -7,7 +7,7 @@ coords = np.random.rand(len(regions), 3)
 connections = np.random.rand(len(regions), len(regions))
 fig = plt.figure(figsize=(8, 6))
 ax = fig.add_subplot(111, projection='3d')
-ax.set_title("🧠 Virtual Brain Twin - 3D Neural Connectivity", fontsize=13, fontweight='bold')
+ax.set_title("Virtual Brain Twin - 3D Neural Connectivity", fontsize=13, fontweight='bold')
 for i, region in enumerate(regions):
     ax.scatter(coords[i, 0], coords[i, 1], coords[i, 2], s=200, color='skyblue', edgecolor='black')
     ax.text(coords[i, 0], coords[i, 1], coords[i, 2]+0.03, region, fontsize=10, ha='center', fontweight='bold')
