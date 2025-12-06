@@ -63,7 +63,7 @@ try:
     num_regions = weights.shape[0]
     region_labels = extract_region_labels_final(INFO_FILE, expected_count=num_regions)
     if len(region_labels) != num_regions:
-        print(f"⚠️ Warning: Found {len(region_labels)} labels, expected {num_regions}. Auto-filling missing names.")
+        print(f"Warning: Found {len(region_labels)} labels, expected {num_regions}. Auto-filling missing names.")
         region_labels = np.array([f"Region_{i+1}" for i in range(num_regions)])
     conn_temp = connectivity.Connectivity(
         weights=weights,
@@ -74,9 +74,9 @@ try:
         number_of_regions=num_regions
     )
     conn_temp.configure()
-    print(f"✅ Success: Loaded ALL 5 structural components and configured connectivity with {num_regions} regions.")
+    print(f"Success: Loaded ALL 5 structural components and configured connectivity with {num_regions} regions.")
 except Exception as e:
-    print(f"❌ CRITICAL ERROR: Could not load data after all file fixes.\nOriginal Error: {e}")
+    print(f" CRITICAL ERROR: Could not load data after all file fixes.\nOriginal Error: {e}")
     exit()
 
 np.random.seed(42)
