@@ -1,24 +1,13 @@
-# ======================================================================
-# STEP 6 & 7: AUTOMATIC REPORT GENERATION WITH GRAPH
-# ======================================================================
 from reportlab.lib.pagesizes import A4
 from reportlab.lib import colors
 from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle, Image
 import datetime
-
-# --- Data from your simulation (copy from your main.py results) ---
 optimal_coupling_a = 0.0145
 best_corr = 0.0295
-
-# --- Report file name ---
 report_filename = "Virtual_Brain_Twin_Report.pdf"
-
-# --- Create document ---
 doc = SimpleDocTemplate(report_filename, pagesize=A4)
 styles = getSampleStyleSheet()
-
-# --- Custom styles ---
 title_style = ParagraphStyle(
     'title',
     parent=styles['Title'],
@@ -29,17 +18,11 @@ title_style = ParagraphStyle(
 normal_style = styles['Normal']
 
 content = []
-
-# --- Title ---
-content.append(Paragraph("🧠 Virtual Brain Twin – Personalized Treatment Report", title_style))
+content.append(Paragraph(" Virtual Brain Twin – Personalized Treatment Report", title_style))
 content.append(Spacer(1, 20))
-
-# --- Date/Time ---
 now = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 content.append(Paragraph(f"<b>Generated On:</b> {now}", normal_style))
 content.append(Spacer(1, 10))
-
-# --- Key Results Table ---
 table_data = [
     ["Parameter", "Value"],
     ["Optimal Coupling (a)", f"{optimal_coupling_a:.4f}"],
@@ -57,22 +40,17 @@ table.setStyle(TableStyle([
 ]))
 content.append(table)
 content.append(Spacer(1, 20))
-
-# --- Interpretation ---
 interpretation = """
 This report summarizes the Virtual Brain Twin simulation.  
 The optimal coupling parameter (a) represents the balance between
 different brain regions’ activity levels, while the correlation indicates
 how closely the simulated brain dynamics match the target functional
 connectivity.  
-
 Higher correlations imply better personalization.  
 These parameters can now guide further tuning or clinical simulation.
 """
 content.append(Paragraph(interpretation, normal_style))
 content.append(Spacer(1, 10))
-
-# --- Add Graph Image ---
 try:
     img = Image("brain_activity_plot.png", width=400, height=250)
     content.append(Spacer(1, 10))
@@ -81,9 +59,7 @@ try:
     content.append(img)
     content.append(Spacer(1, 20))
 except Exception as e:
-    content.append(Paragraph("⚠️ Graph image not found. Please run main.py first to generate it.", normal_style))
-
-# --- Build PDF ---
+    content.append(Paragraph("Graph image not found. Please run main.py first to generate it.", normal_style))
 doc.build(content)
 
-print(f"✅ Report generated successfully: {report_filename}")
+print(f" Report generated successfully: {report_filename}")
