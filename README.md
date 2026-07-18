@@ -119,4 +119,3 @@ python main.py
 **Navya Sree**
 
 - GitHub: https://github.com/23004513
-- LinkedIn: https://www.linkedin.com/in/nuthalapati-navya-sree-bb2268383
