@@ -4,6 +4,17 @@ A Python-based simulation project that creates a **Virtual Brain Twin** to model
 
 ---
 
+## Introduction
+
+This project is a simplified **Virtual Brain Twin** developed using **Python** to simulate brain activity. Instead of using real MRI scans, EEG data, or patient records, the project generates **synthetic brain signals** mathematically. This makes it possible to study brain activity in a safe and educational environment without requiring expensive medical equipment or real patient data.
+
+The generated signals are processed using basic preprocessing techniques such as noise reduction and normalization to make them suitable for visualization and comparison. The project then creates different visual representations of brain activity, including a digital brain network, simulated brain activity graphs, and 3D brain visualizations.
+
+A comparison module is included to observe differences between simulated healthy and psychiatric brain activity patterns. The project also automatically generates a PDF report containing the simulation results and visualizations for documentation and presentation.
+
+This project is designed for **learning and research purposes**. It helps students understand how brain activity can be digitally simulated, processed, visualized, and analyzed using programming and simulation techniques.
+
+
 ## ✨ Features
 
 - 🧠 Virtual Brain Twin Simulation
@@ -55,6 +66,11 @@ A Python-based simulation project that creates a **Virtual Brain Twin** to model
 ### 📄 Generated Simulation Report
 
 ![Report](screenshots/generated_pdf.png)
+
+### Architecture Diagram
+
+<img width="790" height="702" alt="architecture_dia" src="https://github.com/user-attachments/assets/c81f4cf3-b06f-4684-9dc4-18cd61c24426" />
+
 
 ---
 
